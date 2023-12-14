@@ -26,14 +26,16 @@ class PlayerController extends Controller
         return redirect()->back()->with('error', 'Career not found.');
     }
 
+    $questionCount = Question::where('career_id', $career->id)->count();
+
+    if ($questionCount < 10) {
+        return redirect()->back()->with('error', 'There are not enough questions for this career.');
+    }
+
     $randomQuestions = Question::where('career_id', $career->id)
         ->inRandomOrder()
         ->limit(10)
         ->get();
-
-    if ($randomQuestions->isEmpty()) {
-        return redirect()->back()->with('error', 'No questions for this career.');
-    }
 
     $sessionQuestion = new SessionQuestion();
     foreach ($randomQuestions as $index => $question) {
@@ -48,6 +50,7 @@ class PlayerController extends Controller
 
     return view('Player.Game', compact('qst', 'idg', 'pnt', 'ids'));
 }
+
 
            public function game(Request $request) {
             if($request->input('idg')==10){
