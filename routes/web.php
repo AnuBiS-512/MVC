@@ -18,10 +18,10 @@ Route::get('/', function () {
 })->name('home');
 route::GET('/Career','App\Http\Controllers\PlayerController@Career')->name('Career');
 route::GET('/admin','App\Http\Controllers\PlayerController@admin')->name('admin');
-route::GET('/leaderbored','App\Http\Controllers\PlayerController@leaderbored')->name('leaderbored');
+route::get('/leaderbored','App\Http\Controllers\PlayerController@leaderbored')->name('leaderbored');
 route::POST('/Situation','App\Http\Controllers\PlayerController@submitCarrier')->name('submitCarrier');
-route::post('/game','App\Http\Controllers\PlayerController@game')->name('game');
-route::post('/leader','App\Http\Controllers\PlayerController@leader')->name('leader');
+route::POST('/game','App\Http\Controllers\PlayerController@game')->name('game');
+route::POST('/leader','App\Http\Controllers\PlayerController@leader')->name('leader');
 route::get('/admin/{id}','App\Http\Controllers\PlayerController@adminadd')->name('adminadd');
 route::post('/adminaddq','App\Http\Controllers\PlayerController@adminaddq')->name('adminaddq');
 route::post('/addcareer','App\Http\Controllers\PlayerController@addcareer')->name('addcareer');

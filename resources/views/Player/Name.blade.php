@@ -41,6 +41,10 @@
             font-size: 18px;
             font-weight: bold;
             color: #333;
+    color: #000; /* Changer la couleur du texte en blanc pour contraster avec le fond */
+    /*background-color: #3498db;  Choisir une couleur de fond attrayante */
+    border-radius: 10px; /* Ajouter des coins arrondis pour un aspect plus doux */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
