@@ -103,9 +103,9 @@ li a:hover:not(.active) {
 .iya{
   color: #000;
   padding: 8px 8px;
-  font-style:oblique;
-  margin: 10;
-  font-size: 30px; /* Taille du texte */
+  font-style:;
+  margin: 8;
+  font-size: 40px; /* Taille du texte */
   font-weight: bold; /* Style du texte */
   color: #333;
 
@@ -129,10 +129,11 @@ li a:hover:not(.active) {
     <li><a href="{{route('Career')}}" class="cc">Play</a></li>
     <li><a href="{{route('leaderbored')}}" class="cc">Leaderbord</a></li>
     <li><a href="#about" class="cc">About</a></li>
+    <li><a class="cc" href="{{route('admin')}}">Admin Access</a></li>
   </ul>
   
   <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-    <h1 class="iya" font-style="oblique"> </h1>
+    <h1 class="iya" font-style="oblique">My Virtual Creer </h1>
     
   </div>
 </div>
