@@ -253,21 +253,21 @@ ul {
 
 <ul>
   <a class="navbar-brand" href="{{url('/')}}">
-    <div class="logo-container">
-      <img src="https://static.vecteezy.com/ti/vecteur-libre/p3/9133592-mvc-letter-logo-design-with-polygon-shape-mvc-polygon-and-cube-shape-logo-design-mvc-hexagon-vector-logo-template-white-and-black-colors-mvc-monogram-logo-entreprise-et-immobilier-vectoriel.jpg" alt="Votre logo" class="logo">
-      <p class="logo-text">MVC</p>
-    </div>
-  </a>
+  <div class="logo-container">
+    <img src="https://static.vecteezy.com/ti/vecteur-libre/p3/9133592-mvc-letter-logo-design-with-polygon-shape-mvc-polygon-and-cube-shape-logo-design-mvc-hexagon-vector-logo-template-white-and-black-colors-mvc-monogram-logo-entreprise-et-immobilier-vectoriel.jpg" alt="Votre logo" class="logo">
+    <p class="logo-text">MVC</p>
+</div>
 
-  <li><a href="{{route('Career')}}" class="cc">Play</a></li>
-  <li><a href="{{route('leaderbored')}}" class="cc">Leaderbord</a></li>
-  <li><a href="#about" class="cc">About</a></li>
+<ul>
+    <li><a href="{{route('Career')}}" class="cc" disabled>Play</a></li>
+    <li><a href="{{route('leaderbored')}}" class="cc" disabled>Leaderbord</a></li>
+    <li><a href="#about" class="cc" disabled>About</a></li>
 </ul>
 
 <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-  <h1 class="iya" font-style="oblique"> </h1>
-  
+    <h1 class="iya" font-style="oblique"> </h1>
 </div>
+
 </div>
 
 

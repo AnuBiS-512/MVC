@@ -113,6 +113,7 @@ li a:hover:not(.active) {
 
 
 </style>
+<title>MVC</title>
 </head>
 <body>
 

@@ -13,6 +13,7 @@
             background-color: #f8f9fa;
             font-family: 'Arial', sans-serif;
             color: #333;
+            text-align: center; /* Center the content */
         }
 
         .mvc-text {
@@ -20,6 +21,8 @@
             font-weight: bold;
             color: #007bff;
             text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
         }
 
         .container {
@@ -31,29 +34,45 @@
             font-weight: bold;
             color: #007bff;
             margin-bottom: 20px;
-            text-align:center;
         }
 
         th, td {
             text-align: center;
-            border: 1px solid #007bff; /* Ajout de bordures autour des cellules */
-            padding: 10px; /* Ajout de rembourrage pour un aspect plus aéré */
+            border: 1px solid #007bff;
+            padding: 10px;
         }
 
         thead {
-            background-color: #007bff; /* Couleur de fond de l'en-tête */
-            color: #fff; /* Couleur du texte de l'en-tête */
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Style for the select menu */
+        select {
+            padding: 5px;
+            font-size: 16px;
         }
     </style>
 </head>
 
 <body>
 
-    <a class="mvc-text" href="{{url('/leaderbored')}}">MVC</a>
+    <a class="mvc-text" href="{{url('/')}}">MVC</a>
 
     <div class="container">
         <h2>Leaderboard</h2>
-        <table class="table table-striped">
+
+        <!-- Add a select menu for career filtering -->
+        <label for="careerFilter">Filter by Career:</label>
+        <select id="careerFilter" onchange="filterLeaders()">
+            <option value="all">All Careers</option>
+            <!-- Add options dynamically based on available careers -->
+            @foreach($careers as $career)
+                <option value="{{$career->id}}">{{$career->name}}</option>
+            @endforeach
+        </select>
+
+        <table class="table table-striped" id="leaderboardTable">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -63,7 +82,7 @@
             </thead>
             <tbody>
                 @foreach($leaders as $index => $leader)
-                <tr>
+                <tr data-career="{{$leader->career_id}}">
                     <th scope="row">{{$index + 1}}</th>
                     <td>{{$leader->full_name}}</td>
                     <td>{{$leader->points}}</td>
@@ -72,6 +91,23 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+        function filterLeaders() {
+            var selectedCareerId = document.getElementById('careerFilter').value;
+            var rows = document.getElementById('leaderboardTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                var careerId = rows[i].getAttribute('data-career');
+
+                if (selectedCareerId === 'all' || careerId === selectedCareerId) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 
 </body>
 
