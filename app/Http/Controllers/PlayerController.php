@@ -7,6 +7,7 @@ use App\Models\Career;
 use App\Models\Leader;
 use App\Models\Question;
 use App\Models\SessionQuestion;
+use Illuminate\Support\Facades\DB;
 
 class PlayerController extends Controller
 {
@@ -104,10 +105,23 @@ class PlayerController extends Controller
 
         }
          }
-        public function leaderbored(){
+         public function leaderbored() {
             $leaders = Leader::orderBy('points', 'desc')->get();
-            return view('Player.Leader',compact('leaders'));
+            $careers = Career::all();
+        
+            foreach ($leaders as $leader) {
+                $question = DB::table('session_question')
+                    ->join('questions', 'session_question.question_id_1', '=', 'questions.id')
+                    ->select('questions.career_id')
+                    ->where('session_question.id', '=', $leader->id_session_question)
+                    ->first();
+        
+                $leader->career_id = $question ? $question->career_id : null;
+            }
+        
+            return view('Player.Leader', compact('leaders', 'careers'));
         }
+        
         public function admin(){
             $careers = Career::all();
             return view("Admin", compact('careers'));
