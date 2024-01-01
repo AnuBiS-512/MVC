@@ -14,8 +14,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: url(https://v68.be/media/wp-content/uploads/2018/12/action-3641202_960_720.jpg);
-  
+  background-image: url('{{ asset('b.jpg') }}');  
   background-size: 100% 100%;
   background-position: center;
   display: flex;
@@ -122,7 +121,7 @@ li a:hover:not(.active) {
   <ul>
     <a class="navbar-brand" href="{{url('/')}}">
       <div class="logo-container">
-        <img src="https://static.vecteezy.com/ti/vecteur-libre/p3/9133592-mvc-letter-logo-design-with-polygon-shape-mvc-polygon-and-cube-shape-logo-design-mvc-hexagon-vector-logo-template-white-and-black-colors-mvc-monogram-logo-entreprise-et-immobilier-vectoriel.jpg" alt="Votre logo" class="logo">
+        <img src="{{ asset('lo.jpg') }}" alt="Votre logo" class="logo">
         <p class="logo-text">MVC</p>
       </div>
     </a>

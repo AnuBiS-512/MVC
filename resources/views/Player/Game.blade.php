@@ -254,7 +254,7 @@ ul {
 <ul>
   <a class="navbar-brand" href="{{url('/')}}">
   <div class="logo-container">
-    <img src="https://static.vecteezy.com/ti/vecteur-libre/p3/9133592-mvc-letter-logo-design-with-polygon-shape-mvc-polygon-and-cube-shape-logo-design-mvc-hexagon-vector-logo-template-white-and-black-colors-mvc-monogram-logo-entreprise-et-immobilier-vectoriel.jpg" alt="Votre logo" class="logo">
+    <img src="{{ asset('lo.jpg') }}"" alt="Votre logo" class="logo">
     <p class="logo-text">MVC</p>
 </div>
 
